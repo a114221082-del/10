@@ -37,11 +37,5 @@
         }
       ]
     }
-  ],
-  "env": [
-    "NODE_ENV",
-    "PORT",
-    "AI_API_KEY",
-    "AI_MODEL"
   ]
 }
