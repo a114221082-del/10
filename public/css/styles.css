@@ -1,0 +1,473 @@
+/* ===========================
+   全局樣式
+   =========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* 溫暖色調 */
+  --primary-color: #FF6B35;     /* 橙色 */
+  --secondary-color: #F7931E;   /* 次要色 */
+  --accent-color: #FDB833;      /* 亮黃色 */
+  --dark-color: #2C3E50;        /* 深灰 */
+  --light-color: #ECF0F1;       /* 淺灰 */
+  
+  /* 玻璃擬態效果 */
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.25);
+  --backdrop-blur: blur(10px);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #FFE5B4 0%, #FFDAB9 100%);
+  color: var(--dark-color);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===========================
+   玻璃擬態效果
+   =========================== */
+
+.glass-morphism {
+  background: var(--glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+/* ===========================
+   通用容器
+   =========================== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===========================
+   導航欄
+   =========================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  margin: 10px 20px;
+  border-radius: 12px;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--dark-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* ===========================
+   Hero 區域
+   =========================== */
+
+.hero {
+  margin: 40px 20px;
+  padding: 60px 40px;
+  text-align: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--glass-bg), rgba(255, 255, 255, 0.1));
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  animation: fadeInDown 0.8s ease;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  color: var(--dark-color);
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.cta-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+}
+
+/* ===========================
+   景點區域
+   =========================== */
+
+.destinations {
+  padding: 60px 20px;
+}
+
+.destinations h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--dark-color);
+  margin-bottom: 3rem;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.destination-card {
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+}
+
+.destination-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.destination-card p {
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* ===========================
+   聊天區域
+   =========================== */
+
+.chat-section {
+  padding: 60px 20px;
+}
+
+.chat-container {
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+}
+
+.chat-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.chat-header h2 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.chat-header p {
+  color: var(--dark-color);
+  font-size: 0.9rem;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding-right: 10px;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 10px 15px;
+  border-radius: 10px;
+  max-width: 80%;
+  animation: slideIn 0.3s ease;
+}
+
+.bot-message {
+  background: rgba(255, 107, 53, 0.1);
+  color: var(--dark-color);
+  margin-right: auto;
+  border-left: 3px solid var(--primary-color);
+}
+
+.user-message {
+  background: var(--primary-color);
+  color: white;
+  margin-left: auto;
+  text-align: right;
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.chat-input:focus {
+  background: white;
+  border-color: var(--primary-color);
+}
+
+.send-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.send-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===========================
+   聯絡表單
+   =========================== */
+
+.contact-section {
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--dark-color);
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  background: white;
+  border-color: var(--primary-color);
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+}
+
+/* ===========================
+   頁尾
+   =========================== */
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem 20px 20px;
+  color: var(--dark-color);
+  border-radius: 15px;
+}
+
+/* ===========================
+   動畫效果
+   =========================== */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===========================
+   響應式設計
+   =========================== */
+
+/* 平板 */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .destinations h2 {
+    font-size: 1.8rem;
+  }
+
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .message {
+    max-width: 95%;
+  }
+}
+
+/* 手機 */
+@media (max-width: 480px) {
+  .navbar .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 30px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .chat-container {
+    height: 400px;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+}

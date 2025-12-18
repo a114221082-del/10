@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旅遊平台 - AI 客服助手</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- 導航欄 -->
+  <nav class="navbar glass-morphism">
+    <div class="container">
+      <div class="logo">🌍 旅遊平台</div>
+      <ul class="nav-links">
+        <li><a href="#home">首頁</a></li>
+        <li><a href="#destinations">景點</a></li>
+        <li><a href="#services">服務</a></li>
+        <li><a href="#contact">聯絡</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 主視覺區域 -->
+  <section id="home" class="hero glass-morphism">
+    <div class="hero-content">
+      <h1>發現世界的美好</h1>
+      <p>透過 AI 客服助手，規劃您夢想中的旅程</p>
+      <button class="cta-btn" onclick="scrollToChat()">開始聊天</button>
+    </div>
+  </section>
+
+  <!-- 景點展示區域 -->
+  <section id="destinations" class="destinations">
+    <div class="container">
+      <h2>熱門景點推薦</h2>
+      <div class="destinations-grid">
+        <div class="destination-card glass-morphism">
+          <h3>日本京都</h3>
+          <p>千年古都，傳統文化與現代融合</p>
+          <span class="tag">亞洲</span>
+        </div>
+        <div class="destination-card glass-morphism">
+          <h3>瑞士阿爾卑斯山</h3>
+          <p>壯麗山景與冒險之旅</p>
+          <span class="tag">歐洲</span>
+        </div>
+        <div class="destination-card glass-morphism">
+          <h3>紐約</h3>
+          <p>不夜城的購物與文化體驗</p>
+          <span class="tag">北美</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI 客服區域 -->
+  <section id="chat" class="chat-section">
+    <div class="container">
+      <div class="chat-container glass-morphism">
+        <div class="chat-header">
+          <h2>🤖 AI 旅遊助手</h2>
+          <p>有任何旅遊問題？與我們的 AI 客服聊天</p>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+          <div class="message bot-message">
+            <p>你好！👋 我是旅遊 AI 助手。請告訴我您想去哪裡或需要什麼幫助？</p>
+          </div>
+        </div>
+
+        <div class="chat-input-area">
+          <input 
+            type="text" 
+            id="userInput" 
+            placeholder="輸入您的問題..." 
+            class="chat-input"
+            onkeypress="handleKeyPress(event)"
+          >
+          <button class="send-btn" onclick="sendMessage()">發送</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聯絡表單區域 -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>聯絡我們</h2>
+      <form class="contact-form glass-morphism" onsubmit="submitContact(event)">
+        <div class="form-group">
+          <label for="name">姓名 *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">信箱 *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">主旨</label>
+          <input type="text" id="subject" name="subject">
+        </div>
+
+        <div class="form-group">
+          <label for="message">訊息 *</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">提交</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer class="footer glass-morphism">
+    <p>&copy; 2025 旅遊平台。保留所有權利。</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
